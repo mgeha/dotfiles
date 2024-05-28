@@ -6,10 +6,10 @@ export LANG=en_US.UTF-8
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Load completion system
-autoload -U compinit
-compinit -i
+autoload -U compinit && compinit -i
 
 # Theming and prompt
+autoload -U promptinit && promptinit 
 PS1="%n@%m:%~%# "
 
 # Aliases
