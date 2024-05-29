@@ -50,4 +50,4 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
 # Misc
-eval $(thefuck --alias)
+command -v thefuck >/dev/null 2>&1 && eval $(thefuck --alias)
