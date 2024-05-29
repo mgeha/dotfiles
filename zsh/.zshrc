@@ -23,6 +23,7 @@ alias lh='ls -lah'
 alias wetter='curl https://v2.wttr.in/Wolnzach'
 
 # Disable Google Analytics for Homebrew
+export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_GOOGLE_ANALYTICS=1
 
 # Shell options
