@@ -15,7 +15,9 @@ PS1="%n@%m:%~%# "
 # Aliases
 alias ...='cd ../..'
 alias dmesg='dmesg -T'
-alias cat='batcat'
+command -v bat >/dev/null 2>&1 && alias cat='bat'
+command -v batcat >/dev/null 2>&1 && alias cat='batcat'
+command -v eza >/dev/null 2>&1 && alias ls='eza'
 command -v eza >/dev/null 2>&1 && alias ls='eza'
 alias ll='ls -la'
 alias lh='ls -lah'
@@ -42,3 +44,10 @@ SAVEHIST=10000
 
 # Completion system configuration
 zstyle ':completion:*' special-dirs true
+
+# Mac
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+# Misc
+eval $(thefuck --alias)
