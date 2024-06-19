@@ -9,8 +9,10 @@ PATH=/usr/local/bin:/usr/local/sbin:$PATH
 autoload -U compinit && compinit -i
 
 # Theming and prompt
-autoload -U promptinit && promptinit 
-PS1="%n@%m:%~%# "
+autoload -U promptinit && promptinit
+source ~/.zsh.d/gentoo_prompt.zsh
+prompt_gentoo_setup blue green red
+
 
 # Aliases
 alias ...='cd ../..'
