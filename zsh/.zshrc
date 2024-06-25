@@ -3,7 +3,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # PATH configuration
-PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Load completion system
 autoload -U compinit && compinit -i
@@ -15,6 +15,7 @@ prompt_gentoo_setup blue green red
 
 
 # Aliases
+alias ..='cd ..'
 alias ...='cd ../..'
 alias dmesg='dmesg -T'
 command -v bat >/dev/null 2>&1 && alias cat='bat'
@@ -31,8 +32,10 @@ export HOMEBREW_NO_ANALYTICS=1
 setopt auto_cd
 setopt append_history
 setopt extended_history
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
 setopt hist_expire_dups_first
-setopt hist_ignore_dups  # ignore duplication command history list
+setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
