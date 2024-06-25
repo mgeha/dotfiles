@@ -20,7 +20,11 @@ alias ...='cd ../..'
 alias dmesg='dmesg -T'
 command -v bat >/dev/null 2>&1 && alias cat='bat'
 command -v batcat >/dev/null 2>&1 && alias cat='batcat'
-command -v eza >/dev/null 2>&1 && alias ls='eza'
+if command -v eza >/dev/null 2>&1; then
+    alias ls='eza'
+else
+    alias ls='ls --color=auto'
+fi
 alias ll='ls -la'
 alias lh='ls -lah'
 alias wetter='curl https://v2.wttr.in/Wolnzach'
