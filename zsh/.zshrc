@@ -28,7 +28,7 @@ fi
 alias ll='ls -la'
 alias lh='ls -lah'
 alias wetter='curl https://v2.wttr.in/Wolnzach'
-alias zupdate='cd ~/.dotfiles && git pull && stow -t ~ zsh && source ~/.zshrc && cd ~'
+alias zupdate='curr_dir=$(pwd) && cd ~/.dotfiles && git pull && stow -t ~ zsh && source ~/.zshrc && cd "$curr_dir"'
 
 # Disable Google Analytics for Homebrew
 export HOMEBREW_NO_ANALYTICS=1
