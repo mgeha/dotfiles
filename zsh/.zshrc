@@ -18,8 +18,18 @@ prompt_gentoo_setup blue green red
 alias ..='cd ..'
 alias ...='cd ../..'
 alias dmesg='dmesg -T'
-command -v bat >/dev/null 2>&1 && alias cat='bat'
-command -v batcat >/dev/null 2>&1 && alias cat='batcat'
+
+if command -v bat >/dev/null 2>&1; then
+  _batcmd="bat"
+elif command -v batcat >/dev/null 2>&1; then
+  _batcmd="batcat"
+fi
+
+if [[ -n "$_batcmd" ]]; then
+  alias cat="$_batcmd --paging=never"
+  alias less="$_batcmd"
+fi
+
 if command -v eza >/dev/null 2>&1; then
     alias ls='eza'
 else
