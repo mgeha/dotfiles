@@ -18,6 +18,7 @@ prompt_gentoo_setup blue green red
 alias ..='cd ..'
 alias ...='cd ../..'
 alias dmesg='dmesg -T'
+alias sshinsecure='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 
 if command -v bat >/dev/null 2>&1; then
   _batcmd="bat"
