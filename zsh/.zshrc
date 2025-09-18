@@ -29,7 +29,7 @@ fi
 if [[ -n "$_batcmd" ]]; then
   alias cat="$_batcmd --paging=never"
   alias less="$_batcmd"
-  alias battail="$_batcmd --paging=never -l log"
+  alias battail="tail -f /var/log/pacman.log | $_batcmd --paging=never -l log"
 fi
 
 if command -v eza >/dev/null 2>&1; then
