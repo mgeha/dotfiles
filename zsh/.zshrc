@@ -27,7 +27,6 @@ elif command -v batcat >/dev/null 2>&1; then
 fi
 
 if [[ -n "$_batcmd" ]]; then
-  alias cat="$_batcmd --paging=never"
   alias less="$_batcmd"
   battail() {
     tail -f "$@" | "$_batcmd" --paging=never -l log
@@ -58,12 +57,14 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt hist_verify
+setopt share_history
+setopt pipefail
 setopt inc_append_history
 
 # History configuration
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 
 # Completion system configuration
 zstyle ':completion:*' special-dirs true
