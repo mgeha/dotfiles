@@ -70,6 +70,7 @@ SAVEHIST=100000
 zstyle ':completion:*' special-dirs true
 
 # Mac
+bindkey "^[[3~" delete-char
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
