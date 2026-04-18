@@ -3,7 +3,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # PATH configuration
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH="$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Load completion system
 autoload -U compinit && compinit -i
